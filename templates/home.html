@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="hero" id="home" aria-label="home">
+  <div class="container">
+
+    <div class="hero-content">
+
+    <p class="hero-subtitle">Hello Everyone!</p>
+
+      <h1 class="headline headline-1 section-title">
+          <span class="span">I’m</span> <span class="span">Sohail Ahmad</span>
+      </h1>
+
+    <p class="hero-text">
+          As a software student skilled in Python, I'm passionate about
+          backend development with Django. I'm committed to driving 
+          innovation and making meaningful contributions to software development and technological progress.
+    </p>
+    
+    <a href="https://drive.google.com/file/d/17ojaPbX6IilkRwXtmihuzhUFUxRzOEhd/view?usp=drive_link" class="btn btn-secondary">
+      <span class="span">Show Resume</span>
+
+      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+    </a>
+    
+    </div>
+    
+  </div>
+
+      <div class="hero-banner">
+
+        <img src="{% static 'images/sohail.png' %}" width="527" height="500" alt="Sohail" class="w-100">
+
+        <img src="{% static 'images/pattern-2.svg' %}" width="27" height="26" alt="shape" class="shape shape-1">
+
+        <img src="{% static 'images/pattern-3.svg' %}" width="27" height="26" alt="shape" class="shape shape-2">
+
+      </div>
+
+      <img src="{% static 'images/shadow-1.svg' %}" width="500" height="800" alt="" class="hero-bg hero-bg-1">
+
+      <img src="{% static 'images/shadow-2.svg' %}" width="500" height="500" alt="" class="hero-bg hero-bg-2">
+
+    </div>
+
+</section>
+  <div class="skill">
+    <h1>My Skills</h1>
+    
+    <li><h3>Python</h3>
+      <span class="bar"><span class="python"></span></span>
+    </li>
+
+    <li><h3>SQL</h3>
+      <span class="bar"><span class="sql"></span></span>
+    </li>
+
+    <li><h3>Django</h3>
+      <span class="bar"><span class="django"></span></span>
+    </li>
+
+    <li><h3>HTML</h3>
+      <span class="bar"><span class="html"></span></span>
+    </li><br>
+
+    <a href="{% url 'projects' %}" class="btn btn-secondary">
+      <span class="span">Show Projects</span>
+
+      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+    </a>
+  </div> 
+  
+  {% endblock %}
+  
