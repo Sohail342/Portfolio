@@ -4,19 +4,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import environ
-
-# Initialize our enviroment variables
-env  = environ.Env()
-
-environ.Env.read_env()
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('p0_zxr4%!vc8!t+-s)(h0ytn1&m)48el(-#=w4dncn2c(58_6b')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -24,15 +17,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ['https://dynamic-portfolio.2.sg-1.fl0.io']
-
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sohailahmed34280@gmail.com'
-EMAIL_HOST_PASSWORD = 'edfnmkxlqatvhhzj'
-
 
 # Application definition
 
@@ -77,13 +61,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-
-# Postgrees
-import dj_database_url
-
+# Default DB
 DATABASES = {
-    'default' : dj_database_url.parse(env('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# If you want to connect your own postgresql DB
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'your_database_name',
+#         'USER': 'your_database_user',
+#         'PASSWORD': 'your_database_password',
+#         'HOST': 'localhost',  # Or your database host
+#         'PORT': '',           # Leave empty for default port
+#     }
+# }
 
 
 # Password validation
