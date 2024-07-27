@@ -58,6 +58,6 @@ Run the Local server to test your project
 
 ```bash
   python3 manage.py runserver
-'''
+```
 
 Make sure to delete (Optional) the Procfile, it is for deployment purpose only.
