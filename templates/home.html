@@ -1,77 +1,201 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
 <section class="hero" id="home" aria-label="home">
   <div class="container">
 
     <div class="hero-content">
 
-    <p class="hero-subtitle">Hello Everyone!</p>
+      <p class="hero-subtitle">Hello Everyone!</p>
 
       <h1 class="headline headline-1 section-title">
-          <span class="span">I’m</span> <span class="span">Sohail Ahmad</span>
+        <span class="span">I’m</span> <span class="span">Sohail Ahmad</span>
       </h1>
 
-    <p class="hero-text">
-          As a software student skilled in Python, I'm passionate about
-          backend development with Django. I'm committed to driving 
-          innovation and making meaningful contributions to software development and technological progress.
-    </p>
-    
-    <a href="https://drive.google.com/file/d/17ojaPbX6IilkRwXtmihuzhUFUxRzOEhd/view?usp=drive_link" class="btn btn-secondary">
-      <span class="span">Show Resume</span>
+      <div class="hero-text-and-image">
+        <div class="hero-text">
+          <p>
+            As a software student skilled in Python, I'm passionate about
+            backend development with Django. I'm committed to driving
+            innovation and making meaningful contributions to software development and technological progress.
+          </p><br>
 
-      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-    </a>
-    
-    </div>
-    
-  </div>
+          <a href="https://drive.google.com/file/d/17ojaPbX6IilkRwXtmihuzhUFUxRzOEhd/view?usp=drive_link"
+            class="btn btn-secondary">
+            <span class="span">Show Resume</span>
 
-      <div class="hero-banner">
-
-        <img src="{% static 'images/sohail.png' %}" width="527" height="500" alt="Sohail" class="w-100">
-
-        <img src="{% static 'images/pattern-2.svg' %}" width="27" height="26" alt="shape" class="shape shape-1">
-
-        <img src="{% static 'images/pattern-3.svg' %}" width="27" height="26" alt="shape" class="shape shape-2">
-
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
       </div>
 
-      <img src="{% static 'images/shadow-1.svg' %}" width="500" height="800" alt="" class="hero-bg hero-bg-1">
-
-      <img src="{% static 'images/shadow-2.svg' %}" width="500" height="500" alt="" class="hero-bg hero-bg-2">
-
     </div>
 
+    <div class="hero-banner">
+      <img src="{% static 'images/sohail.png' %}" width="527" height="500" alt="Sohail" class="w-100">
+      <img src="{% static 'images/pattern-2.svg' %}" width="27" height="26" alt="shape" class="shape shape-1">
+      <img src="{% static 'images/pattern-3.svg' %}" width="27" height="26" alt="shape" class="shape shape-2">
+    </div>
+
+  </div>
+
+  <img src="{% static 'images/shadow-1.svg' %}" width="500" height="800" alt="" class="hero-bg hero-bg-1">
+  <img src="{% static 'images/shadow-2.svg' %}" width="500" height="500" alt="" class="hero-bg hero-bg-2">
+
 </section>
-  <div class="skill">
-    <h1>My Skills</h1>
-    
-    <li><h3>Python</h3>
-      <span class="bar"><span class="python"></span></span>
-    </li>
 
-    <li><h3>SQL</h3>
-      <span class="bar"><span class="sql"></span></span>
-    </li>
 
-    <li><h3>Django</h3>
-      <span class="bar"><span class="django"></span></span>
-    </li>
+<!-- Projects -->
+<section class="section feature" class="projects" aria-label="feature" id="featured">
+  <div class="container">
 
-    <li><h3>HTML</h3>
-      <span class="bar"><span class="html"></span></span>
-    </li><br>
+    <h2 class="headline headline-2 section-title"><br><br>
+      <span class="span">Projects</span>
+    </h2>
 
-    <a href="{% url 'projects' %}" class="btn btn-secondary">
-      <span class="span">Show Projects</span>
+    <p class="section-text">
+      <a href="https://github.com/Sohail342" target="_blank" class="social-link">
+        <ion-icon name="logo-github"></ion-icon>
+        Explore more on 
+        <span class="span">Github</span>
+      </a>
+    </p>
 
-      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-    </a>
-  </div> 
-  
-  {% endblock %}
-  
+    <ul class="feature-list">
+
+      {% for project in projects %}
+      <li>
+        <div class="card feature-card">
+
+          <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+            <img src="{{project.project_img.url}}" width="1602" height="903" loading="lazy"
+              alt="{{project.project_title}}" class="img-cover">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-wrapper">
+              <div class="card-tag">
+                <p class="span hover-2">
+                  {{project.project_skills_gain}}
+                </p>
+              </div>
+
+              <div class="wrapper">
+
+                <span class="span">{{project.project_associate}}</span>
+              </div>
+            </div>
+
+            <h3 class="headline headline-3">
+              <a href="{{project.project_link}}" class="card-title hover-2">
+                {{project.project_title}}
+              </a>
+            </h3>
+
+            <div class="card-wrapper">
+
+              <a href="{{project.project_link}}" class="card-btn">Repository</a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+  </div>
+
+<img src="{% static 'images/shadow-3.svg' %}" width="500" height="1500" loading="lazy" alt="" class="feature-bg">
+
+</section>
+
+<!-- Certifications -->
+<section class="section feature" aria-label="feature" id="featured">
+  <div class="container">
+
+    <h2 class="headline headline-2 section-title"><br><br>
+      <span class="span">Certifications</span>
+    </h2>
+
+    <p class="section-text">
+      <a href="https://www.linkedin.com/in/sohailahmad3428041928/" target="_blank" class="social-link">
+        <ion-icon name="logo-linkedin"></ion-icon>
+        Explore more on
+        <span class="span">LinkedIn</span>
+      </a>
+    </p>
+
+    <ul class="feature-list">
+      {% for certificate in certificates %}
+      <li>
+        <div class="card feature-card">
+          <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+            {% if certificate.certificate_img.url %}
+            <img src="{{certificate.certificate_img.url}}" width="1602" height="903" loading="lazy"
+              alt="{{certificate.certificate_title}}" class="img-cover">
+            {% endif %}
+          </figure>
+
+          <div class="card-content">
+            <div class="card-wrapper">
+              <div class="card-tag">
+                <p class="span hover-2">
+                  {{certificate.offer_by}}
+                </p>
+              </div>
+
+              <div class="wrapper">
+                <span class="span">{{certificate.certificate_title}}</span>
+              </div>
+            </div>
+
+            <h3 class="headline headline-3">
+              <a href="{{certificate.certificate_link}}" class="card-title hover-2">
+                {{project.project_title}}
+              </a>
+            </h3>
+
+            <div class="card-wrapper">
+              <a href="{{certificate.certificate_link}}" class="card-btn">Click</a>
+            </div>
+
+          </div>
+
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <img src="{% static 'images/shadow-3.svg' %}" width="500" height="1500" loading="lazy" alt="" class="feature-bg">
+</section>
+
+<!-- Skills -->
+<div class="skill">
+  <h1>My Skills</h1>
+
+  <li>
+    <h3>Python</h3>
+    <span class="bar"><span class="python"></span></span>
+  </li>
+
+  <li>
+    <h3>SQL</h3>
+    <span class="bar"><span class="sql"></span></span>
+  </li>
+
+  <li>
+    <h3>Django</h3>
+    <span class="bar"><span class="django"></span></span>
+  </li>
+
+  <li>
+    <h3>HTML</h3>
+    <span class="bar"><span class="html"></span></span>
+  </li><br>
+</div>
+{% endblock %}

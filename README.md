@@ -60,7 +60,6 @@ Run the Local server to test your project
   python3 manage.py runserver
 ```
 
-Make sure to delete (Optional) the Procfile, it is for deployment purpose only.
 
 ## Contact
 If you have any questions or feedback, feel free to reach out:
