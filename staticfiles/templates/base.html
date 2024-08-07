@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Sohail - Perosonal Portfolio</title>
+  <meta name="title" content="Sohail - Perosonal Portfolio">
+  <meta name="description" content="This is a Perosonal Portfolio">
+
+  <!-- 
+    - logo
+  -->
+  <link rel="shortcut icon" href="{% static 'images/logo.jpeg' %}">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="{% static 'images/hero-banner.png' %}">
+  <link rel="preload" as="image" href="{% static 'images/pattern-2.svg' %}">
+  <link rel="preload" as="image" href="{% static 'images/pattern-3.svg' %}">
+
+</head>
+<body id="top">
+     <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="{% url 'index' %}" class="logo">
+        <img src="{% static 'images/logo.jpeg' %}" width="50" height="39" alt="logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'images/logo.jpeg' %}" width="119" height="37" alt="logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="{% url 'index' %}" class="navbar-link hover-1" data-nav-toggler>About</a>
+          </li>
+          
+          <li>
+            <a href="#contact" class="navbar-link hover-1" data-nav-toggler>Contact</a>
+          </li>
+
+        </ul><br><br>
+
+      
+        <p class="copyright-text">
+          © 2024 - Personal Portfolio Sohail Ahmad.
+          Made with ♥
+        </p>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+
+    <!-- Compiler -->
+    <link rel="stylesheet" href="styleCompiler.css">
+  </header>
+  
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- 
+    - #FOOTER
+  -->
+  <section class="contact" aria-label="contact" id="contact">
+    <footer>
+      <div class="container">
+  
+        <div class="card footer">
+  
+          <div class="section footer-top">
+  
+            <div class="footer-brand">
+  
+              <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'images/logo.jpeg' %}" width="119" height="37" loading="lazy" alt="logo">
+              </a>
+  
+              <p class="footer-text">
+                
+                Since childhood, I've been fascinated by technology. From gadgets to coding, 
+                my interest in tech is lifelong. It fuels my journey in this ever-evolving field.
+              </p>
+  
+              <p class="footer-list-title">Address</p>
+  
+              <address class="footer-text address">
+                East Garden <br>
+                Karachi, Pakistan
+              </address>
+  
+            </div>
+            <br><br>
+  
+  
+            <div class="footer-list">
+  
+              <p class="footer-list-title">Contact Me</p>
+              <p class="footer-text">
+                Get in touch for any questions or projects. I'll be happy to hear from you!<br><br>
+              </p>
+  
+              <div class="input-wrapper">
+                
+                <form action="https://api.web3forms.com/submit" method="POST">
+                  <input type="hidden" name="access_key" value="004cac3a-6e65-4f44-9e95-c59c55ae0d9a">
+  
+                <input type="text" name="name" placeholder="Your name" required class="input-field" autocomplete="off">
+  
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+              </div>
+  
+              <div class="input-wrapper">
+                <input type="email" name="email_address" placeholder="Emaill address" required class="input-field"
+                  autocomplete="off">
+  
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              </div>
+  
+              <div class="input-wrapper"><br>
+                <textarea type="text" name="message" placeholder="Your Message" required class="input-field" required class="input-field"
+                  autocomplete="off" style="width: 300px; height: 150px; resize: none;"></textarea>
+  
+                <ion-icon name="message-outline" aria-hidden="true"></ion-icon>
+              </div>
+  
+              <a href="#" class="btn btn-primary">
+                <button type="submit" class="span">Send</button>
+  
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </a>
+  
+            </div>
+  
+          </div>
+        </form>
+      
+  
+          <div class="footer-bottom">
+  
+            <p class="copyright">
+              &copy; Developed by <a href="mailto:sohailahmed34280@gmail.com" class="copyright-link"> Sohail Ahmad.
+                </a>
+            </p>
+  
+            <ul class="social-list">
+  
+              <li>
+                <a href="https://github.com/Sohail342" target="_blank" class="social-link">
+                  <ion-icon name="logo-github"></ion-icon>
+  
+                  <span class="span">Github</span>
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.linkedin.com/in/sohailahmad3428041928/" target="_blank" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+  
+                  <span class="span">LinkedIn</span>
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.instagram.com/sohail_ahmed113?igsh=YTJka3ltbnY4ejN4" target="_blank" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+  
+                  <span class="span">Instagram</span>
+                </a>
+              </li>
+  
+              <li>
+                <a href="mailto:sohailahmed34280@gmail.com"  class="social-link">
+                  <span class="ion--mail"></span>
+                  <span class="span">Email</span>
+                </a>
+              </li>
+  
+            </ul>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+    </footer>
+  </section>
+  
+  
+  
+  
+  
+    <!-- 
+      - #BACK TO TOP
+    -->
+  
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+    </a>
+  
+  
+  
+  
+  
+    <!-- 
+      - custom js link
+    -->
+    <script src="{% static 'js/script.js' %}"></script>
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  
+    <!-- 
+      - Form submit
+    -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  
+
+</body>
