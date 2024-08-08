@@ -3,6 +3,10 @@
 
 Welcome to my dynamic Django portfolio! Using Django, I've created a user-friendly platform to showcase my projects and certifications. Easily manage certifications with an intuitive admin interface, adding, editing, or removing details like certification name and offer by. Explore my projects section, where you'll find detailed descriptions, technologies used, and links to GitHub. Keeping my portfolio up-to-date is easy thanks to Django's admin interface. Plus, it looks great on any device with responsive design. Filter projects by tech stack or type for easy browsing. Navigation is smooth, even with lots of projects.  Explore and enjoy a seamless user experience!
 
+## Overview
+
+![Portfolio](static/images/screentshot.JPG)
+
 ## Installation
 
 Install my-project
