@@ -9,14 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = 'django-insecure-%2*h686*+bvoiq-jboli=jn@qv0lkec!gy=ar66$vv7z#hm4lf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['p9z-persistent-faraday.circumeo-apps.net']
+ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://p9z-persistent-faraday.circumeo-apps.net']
+
 
 # Application definition
 
@@ -62,15 +62,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Default DB
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ["POSTGRES_DB"],
-        "USER": os.environ["POSTGRES_USER"],
-        "PASSWORD": os.environ["POSTGRES_PASSWORD"],
-        "HOST": os.environ["POSTGRES_HOST"],
-        "PORT": os.environ["POSTGRES_PORT"],
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 
