@@ -3,6 +3,8 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from urllib.parse import urlparse
+from decouple import config
 
 
 
@@ -68,15 +70,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-# Default DB
+
+# Load the DATABASE_URL from .env
+DATABASE_URL = config("DATABASE_URL")
+
+# Parse the DATABASE_URL
+tmpPostgres = urlparse(DATABASE_URL)
+
+# Extract database details
+db_name = tmpPostgres.path.lstrip('/')  # Remove leading slash
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': db_name,  
+        'USER': tmpPostgres.username, 
+        'PASSWORD': tmpPostgres.password, 
+        'HOST': tmpPostgres.hostname, 
+        'PORT': tmpPostgres.port or 5432,  
     }
-}
-
-
+}   
 
 
 # Password validation
